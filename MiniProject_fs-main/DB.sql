@@ -3,8 +3,6 @@ CREATE TABLE IF NOT EXISTS `academic_sessions` (
   `session_name` VARCHAR(255) NOT NULL,
   `semester` INT NOT NULL,
   `is_active` TINYINT(1) DEFAULT 1,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS `lecturers` (
@@ -12,9 +10,9 @@ CREATE TABLE IF NOT EXISTS `lecturers` (
   `staff_id` VARCHAR(255) NOT NULL UNIQUE,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL UNIQUE,
-  `department` VARCHAR(255) NOT NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `day` VARCHAR(255) NOT NULL,
+  `course` VARCHAR(255) NOT NULL,
+  FOREIGN KEY (`staff_id`) REFERENCES `users`(`id`) ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS `courses` (
@@ -23,8 +21,6 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `course_name` VARCHAR(255) NOT NULL,
   `credit_hours` INT NOT NULL,
   `lecturer_id` BIGINT UNSIGNED NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (`lecturer_id`) REFERENCES `lecturers`(`id`) ON DELETE SET NULL
 );
 
@@ -34,8 +30,6 @@ CREATE TABLE IF NOT EXISTS `rooms` (
   `room_name` VARCHAR(255) NOT NULL,
   `capacity` INT NOT NULL,
   `type` VARCHAR(255) NOT NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS `repeat_students` (
@@ -44,8 +38,19 @@ CREATE TABLE IF NOT EXISTS `repeat_students` (
   `student_name` VARCHAR(255) NOT NULL,
   `course_id` BIGINT UNSIGNED NOT NULL,
   `academic_session_id` BIGINT UNSIGNED NOT NULL,
-  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `reason` VARCHAR(255) NOT NULL,
   FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`academic_session_id`) REFERENCES `academic_sessions`(`id`) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'student',
+  `remember_token` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );

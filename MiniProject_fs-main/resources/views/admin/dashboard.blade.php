@@ -8,27 +8,27 @@
         <i class="fa-solid fa-chart-pie"></i>
         <span>Dashboard</span>
     </a>
-    <a href="#timetable-mgmt" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.timetables') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-calendar-week"></i>
         <span>Timetable Mgmt</span>
     </a>
-    <a href="#user-mgmt" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.users') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-users"></i>
         <span>User Management</span>
     </a>
-    <a href="#repeat-info" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.repeats') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-triangle-exclamation"></i>
         <span>Student Repeat Info</span>
     </a>
-    <a href="#lecturers" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.lecturers') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-chalkboard-user"></i>
         <span>Lecturers & Slots</span>
     </a>
-    <a href="#rooms" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.rooms') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-door-open"></i>
         <span>Room Availability</span>
     </a>
-    <a href="#courses" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
+    <a href="{{ route('admin.courses') }}" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition">
         <i class="fa-solid fa-book-bookmark"></i>
         <span>Courses & Session</span>
     </a>
@@ -79,7 +79,7 @@
     <h2 class="text-lg font-bold text-gray-800 mb-4">Pengurusan Modul Utama</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <a href="#timetable-mgmt" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-indigo-200 transition group">
+        <a href="{{ route('admin.timetables') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-indigo-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-indigo-50 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition">
                     <i class="fa-solid fa-calendar-plus text-2xl"></i>
@@ -91,7 +91,7 @@
             </div>
         </a>
 
-        <a href="#repeat-info" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-amber-200 transition group">
+        <a href="{{ route('admin.repeats') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-amber-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-amber-50 text-amber-600 rounded-xl group-hover:bg-amber-600 group-hover:text-white transition">
                     <i class="fa-solid fa-graduation-cap text-2xl"></i>
@@ -103,7 +103,7 @@
             </div>
         </a>
 
-        <a href="#lecturers" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition group">
+        <a href="{{ route('admin.lecturers') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-emerald-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-emerald-50 text-emerald-600 rounded-xl group-hover:bg-emerald-600 group-hover:text-white transition">
                     <i class="fa-solid fa-clock text-2xl"></i>
@@ -115,7 +115,7 @@
             </div>
         </a>
 
-        <a href="#rooms" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-purple-200 transition group">
+        <a href="{{ route('admin.rooms') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-purple-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-purple-50 text-purple-600 rounded-xl group-hover:bg-purple-600 group-hover:text-white transition">
                     <i class="fa-solid fa-building text-2xl"></i>
@@ -127,7 +127,7 @@
             </div>
         </a>
 
-        <a href="#courses" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-rose-200 transition group">
+        <a href="{{ route('admin.courses') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-rose-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-rose-50 text-rose-600 rounded-xl group-hover:bg-rose-600 group-hover:text-white transition">
                     <i class="fa-solid fa-book text-2xl"></i>
@@ -139,7 +139,7 @@
             </div>
         </a>
 
-        <a href="#user-mgmt" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition group">
+        <a href="{{ route('admin.users') }}" class="block p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition group">
             <div class="flex items-start space-x-4">
                 <div class="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition">
                     <i class="fa-solid fa-users-gear text-2xl"></i>

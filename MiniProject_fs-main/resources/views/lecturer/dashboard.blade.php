@@ -15,24 +15,47 @@
     <!-- Left Half: Form Slot Availability -->
     <div class="bg-white p-6 rounded-xl border shadow-sm">
         <h3 class="text-lg font-bold text-gray-800 mb-4">Kemaskini Hari Bekerja & Slot Masa</h3>
-        <form action="#" method="POST" class="space-y-4">
-            @csrf
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Hari Bekerja</label>
-                <div class="flex gap-2 mt-2">
-                    <label class="flex items-center space-x-1 border px-3 py-1 rounded"><input type="checkbox" name="days[]" value="Monday"> <span>Isnin</span></label>
-                    <label class="flex items-center space-x-1 border px-3 py-1 rounded"><input type="checkbox" name="days[]" value="Tuesday"> <span>Selasa</span></label>
-                    <label class="flex items-center space-x-1 border px-3 py-1 rounded"><input type="checkbox" name="days[]" value="Wednesday"> <span>Rabu</span></label>
-                </div>
-            </div>
+       <form action="{{ route('lecturer.availability.update') }}" method="POST" class="space-y-4">
+    @csrf
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700">Kursus Diajar</label>
-                <input type="text" class="w-full border px-3 py-2 rounded-lg mt-1" placeholder="e.g. SEC101 - Web Development">
-            </div>
+    <!-- Mesej Kejayaan -->
+    @if(session('success'))
+        <div class="p-3 bg-green-100 text-green-700 rounded-lg text-sm">
+            {{ session('success') }}
+        </div>
+    @endif
 
-            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg">Simpan Tetapan</button>
-        </form>
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Hari Bekerja</label>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <label class="flex items-center space-x-1 border px-3 py-1 rounded">
+                <input type="checkbox" name="working_days[]" value="Monday"> <span>Isnin</span>
+            </label>
+            <label class="flex items-center space-x-1 border px-3 py-1 rounded">
+                <input type="checkbox" name="working_days[]" value="Tuesday"> <span>Selasa</span>
+            </label>
+            <label class="flex items-center space-x-1 border px-3 py-1 rounded">
+                <input type="checkbox" name="working_days[]" value="Wednesday"> <span>Rabu</span>
+                <br><br>
+            </label>
+            <label class="flex items-center space-x-1 border px-3 py-1 rounded">
+                <input type="checkbox" name="working_days[]" value="Thursday"> <span>Khamis</span>
+            </label>
+            <label class="flex items-center space-x-1 border px-3 py-1 rounded">
+                <input type="checkbox" name="working_days[]" value="Friday"> <span>Jumaat</span>
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Kursus Diajar</label>
+        <input type="text" name="course_taught" class="w-full border px-3 py-2 rounded-lg mt-1" placeholder="e.g. SEC101 - Web Development" required>
+    </div>
+
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+        Simpan Tetapan
+    </button>
+</form>
     </div>
 
     <!-- Right Half: Timetable from Admin -->
