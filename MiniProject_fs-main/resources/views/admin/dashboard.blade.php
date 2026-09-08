@@ -40,7 +40,7 @@
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-500 font-medium">Jumlah Timetable</p>
-                <h3 class="text-2xl font-bold text-gray-800 mt-1">128</h3>
+                <h3 class="text-2xl font-bold text-gray-800 mt-1">2</h3>
             </div>
             <div class="p-3 bg-blue-50 text-blue-600 rounded-lg">
                 <i class="fa-solid fa-calendar-days text-xl"></i>
@@ -49,7 +49,7 @@
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-500 font-medium">Pelajar Repeat</p>
-                <h3 class="text-2xl font-bold text-amber-600 mt-1">42</h3>
+                <h3 class="text-2xl font-bold text-amber-600 mt-1">2</h3>
             </div>
             <div class="p-3 bg-amber-50 text-amber-600 rounded-lg">
                 <i class="fa-solid fa-triangle-exclamation text-xl"></i>
@@ -58,7 +58,7 @@
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-500 font-medium">Pensyarah Aktif</p>
-                <h3 class="text-2xl font-bold text-gray-800 mt-1">24</h3>
+                <h3 class="text-2xl font-bold text-gray-800 mt-1">2</h3>
             </div>
             <div class="p-3 bg-emerald-50 text-emerald-600 rounded-lg">
                 <i class="fa-solid fa-user-tie text-xl"></i>
@@ -67,7 +67,7 @@
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-500 font-medium">Bilik Kosong Today</p>
-                <h3 class="text-2xl font-bold text-indigo-600 mt-1">15 / 20</h3>
+                <h3 class="text-2xl font-bold text-indigo-600 mt-1">- / 20</h3>
             </div>
             <div class="p-3 bg-indigo-50 text-indigo-600 rounded-lg">
                 <i class="fa-solid fa-door-open text-xl"></i>

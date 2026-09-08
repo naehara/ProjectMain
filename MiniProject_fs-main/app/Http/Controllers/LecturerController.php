@@ -41,4 +41,10 @@ class LecturerController extends Controller
 
         return redirect()->back()->with('success', 'Slot masa & hari bekerja berjaya dikemaskini!');
     }
+
+    public function schedule()
+{
+    // Korang boleh pass data jadual waktu dari DB di sini
+    return view('lecturer.schedule');
+}
 }

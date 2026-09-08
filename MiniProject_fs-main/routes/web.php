@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('lecturer')->name('lecturer.')->group(function () {
         Route::get('/dashboard', [LecturerController::class, 'dashboard'])->name('dashboard');
         Route::post('/availability', [LecturerController::class, 'updateAvailability'])->name('availability.update');
+        Route::get('/schedule', [LecturerController::class, 'schedule'])->name('schedule');
     });
 
     });
