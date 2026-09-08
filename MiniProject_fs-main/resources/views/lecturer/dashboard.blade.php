@@ -5,7 +5,7 @@
 
 @section('sidebar_menu')
     <a href="{{ route('lecturer.dashboard') }}" class="flex items-center px-4 py-3 bg-indigo-600 text-white rounded-lg font-medium space-x-3">
-        <i class="fa-solid fa-calendar-day"></i><span>Jadual & Availability</span>
+        <i class="fa-solid fa-calendar-day"></i><span>Dashboard</span>
     </a>
      <a href="{{ route('lecturer.schedule') }}" 
        class="flex items-center space-x-3 px-3 py-2 rounded-lg {{ request()->routeIs('lecturer.schedule') ? 'bg-indigo-600 text-white font-medium' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }} transition">
