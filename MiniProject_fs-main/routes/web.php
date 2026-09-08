@@ -55,5 +55,8 @@ Route::middleware(['auth'])->group(function () {
 
     // 3. Simpan Data Borang
     Route::post('/repeat', [StudentController::class, 'submitRepeatForm'])->name('repeat.store');
+
+    //4. Papar Jadual Belajar
+    Route::get('/schedule', [StudentController::class, 'schedule'])->name('schedule');
 });
 });

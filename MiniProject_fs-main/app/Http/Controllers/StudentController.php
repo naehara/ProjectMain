@@ -55,4 +55,9 @@ class StudentController extends Controller
 
         return view('student_repeat.repeat_form', compact('courses', 'sessions'));
     }
+
+    public function schedule()
+    {
+        return view('student_repeat.schedule');
+    }
 }

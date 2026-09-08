@@ -26,7 +26,7 @@
                     <div class="bg-indigo-600 p-2 rounded-lg">
                         <i class="fa-solid fa-calendar-days text-xl"></i>
                     </div>
-                    <span class="text-xl font-bold tracking-wide">TimetableSys</span>
+                    <span class="text-xl font-bold tracking-wide">Sistem PJW</span>
                 </div>
 
                 <!-- Navigation Links Dynamic -->
