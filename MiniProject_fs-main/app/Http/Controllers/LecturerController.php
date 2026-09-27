@@ -4,47 +4,57 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LecturerController extends Controller
 {
-    // Papar Lecturer Dashboard
     public function dashboard()
     {
-        $lecturerId = Auth::id();
-
-        // Tarik jadual khusus untuk lecturer yang tengah login (jika ada Model Timetable)
-        // $myTimetables = Timetable::where('lecturer_id', $lecturerId)->get();
-
         return view('lecturer.dashboard');
     }
 
-    // Function untuk kemaskini Working Days & Availability Slots
     public function updateAvailability(Request $request)
     {
         $request->validate([
-            'working_days'  => 'required|array',
-            'course_taught' => 'required|string',
+            'day'       => 'required|string',
+            'status'    => 'required|string',
+            'time_slot' => 'required|string',
         ]);
 
         $user = Auth::user();
+        $formattedTime = ucfirst($request->status) . ' (' . $request->time_slot . ')';
 
-        // Kemaskini atau cipta rekod dalam jadual lecturers
-        \App\Models\Lecturer::updateOrCreate(
-            ['email' => $user->email], // Cari mengikut user log masuk
+        DB::table('lect_availabilty')->updateOrInsert(
+            ['staff_id' => $user->username ?? $user->id],
             [
                 'staff_id' => $user->username ?? $user->id,
-                'name'     => $user->name ?? 'Lecturer Name',
-                'day' => json_encode($request->working_days),
-                'course'       => $request->course_taught,
+                'Name'     => $user->name ?? 'Lecturer',
+                'Day'      => $request->day,
+                'status'   => $request->status, // simpan status berasingan
+                'Time'     => $request->time_slot,
             ]
         );
 
-        return redirect()->back()->with('success', 'Slot masa & hari bekerja berjaya dikemaskini!');
+        return redirect()->back()->with('success', 'Tetapan slot & masa berjaya dikemaskini ke pangkalan data!');
     }
 
     public function schedule()
-{
-    // Korang boleh pass data jadual waktu dari DB di sini
-    return view('lecturer.schedule');
-}
+    {
+        return view('lecturer.schedule');
+    }
+
+    public function profile()
+    {
+        return view('lecturer.profile');
+    }
+
+    public function availability()
+    {
+        return view('lecturer.availability');
+    }
+
+    public function timetable()
+    {
+        return view('lecturer.timetable');
+    }
 }

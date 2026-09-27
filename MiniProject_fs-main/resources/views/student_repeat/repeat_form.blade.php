@@ -10,12 +10,6 @@
         <span>Dashboard</span>
     </a>
 
-    {{-- Link Jadual Waktu Kelas Student --}}
-    <a href="{{ route('student.schedule') }}" 
-       class="flex items-center space-x-3 px-3 py-2 rounded-lg {{ request()->routeIs('student.schedule') ? 'bg-indigo-600 text-white font-medium' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }} transition">
-        <i class="fa-solid fa-table-cells"></i>
-        <span>Jadual Waktu Kelas</span>
-    </a>
 @endsection
 
 @section('content')

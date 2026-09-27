@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    protected $fillable = [
-        'room_code',
+    public $timestamps = false;
+  protected $fillable = [
         'room_name',
-        'capacity',
         'type',
+        'capacity',
+        'status',
     ];
 }

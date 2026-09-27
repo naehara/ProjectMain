@@ -28,4 +28,11 @@ class RepeatStudent extends Model
     {
         return $this->belongsTo(AcademicSession::class, 'academic_session_id');
     }
+
+    protected $table = 'repeat_students';
+    protected $primaryKey = 'student_id'; // Kunci utama pangkalan data korang
+
+    protected $guarded = [];
+
+
 }

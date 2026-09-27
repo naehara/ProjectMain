@@ -54,3 +54,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `remember_token` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE `lecturer_course` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `lecturer_id` INT NOT NULL,
+  `course_id` INT NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
